@@ -1,12 +1,25 @@
 <template>
+  <Nav />
   <div id="nav">
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </div>
   <router-view/>
+  <Footer />
 </template>
-
+<script>
+import Nav from "@/components/Nav.vue";
+import Footer from "@/components/Footer.vue";
+export default {
+  name:"App",
+  components:{
+    Nav,
+    Footer,
+  }
+}
+</script>
 <style lang="scss">
+@import "@/assets/scss/all";
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;

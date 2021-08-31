@@ -1,0 +1,11 @@
+img {
+    max-width: 100%;
+    height: auto;
+    /*height好像不加看不出甚麼差別，但大家都有加...*/
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
