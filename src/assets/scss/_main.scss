@@ -9,3 +9,15 @@ img {
 *::after {
     box-sizing: border-box;
 }
+
+// router-link css樣式
+$color-golden:#ccac00;
+.router a {
+    &.router-link-exact-active {
+        color: darken($color-golden, 7%);
+    }
+    &:hover {
+        color: lighten($color-golden, 5%);
+        border-bottom: 2px solid lighten($color-golden, 5%);
+    }
+}

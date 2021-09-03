@@ -1,11 +1,41 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Category from '../views/Category.vue'
+import Class from '../views/Class.vue'
+import Contact from '../views/Contact.vue'
+import Cart from '../views/Cart.vue'
+import Menber from '../views/Menber.vue'
 
 const routes = [
   {
     path: '/',
     name: 'Home',
     component: Home
+  },
+  {
+    path: "/category",
+    name: "Category",
+    component: Category,
+  },
+  {
+    path: "/class",
+    name: "Class",
+    component: Class,
+  },
+  {
+    path: "/contact",
+    name: "Contact",
+    component: Contact,
+  },
+  {
+    path: "/cart",
+    name: "Cart",
+    component: Cart,
+  },
+  {
+    path: "/menber",
+    name: "Menber",
+    component: Menber,
   },
   {
     path: '/about',

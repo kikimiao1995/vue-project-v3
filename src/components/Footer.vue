@@ -31,7 +31,7 @@ footer{
         justify-content: center;
         align-items: center;
         li{
-            padding-right: 15px;
+            padding: 0 8px;
             a{
                 display: inline-block;
                 padding: 10px 14px;
