@@ -38,25 +38,25 @@
                 </div>
                 <div class="sidebarList text-uppercase text-decoration-none fs-5 list-unstyled router">
                     <router-link to="/">
-                        <div class="sidebarListLink">Home - 首頁</div>
+                        <div class="sidebarListLink" data-bs-dismiss="offcanvas">Home - 首頁</div>
                     </router-link>
                     <router-link to="/about">
-                        <div class="sidebarListLink">About - 關於</div>
+                        <div class="sidebarListLink" data-bs-dismiss="offcanvas">About - 關於</div>
                     </router-link>
                     <router-link to="/category">
-                        <div class="sidebarListLink">Category - 商品分類</div>
+                        <div class="sidebarListLink" data-bs-dismiss="offcanvas">Category - 商品分類</div>
                     </router-link>
                     <router-link to="/class">
-                        <div class="sidebarListLink">Class - 課程</div>
+                        <div class="sidebarListLink" data-bs-dismiss="offcanvas">Class - 課程</div>
                     </router-link>
                     <router-link to="/contact">
-                        <div class="sidebarListLink">Contact - 聯絡</div>
+                        <div class="sidebarListLink" data-bs-dismiss="offcanvas">Contact - 聯絡</div>
                     </router-link>
                     <router-link to="/cart">
-                        <div class="sidebarListLink">Cart - 購物車</div>
+                        <div class="sidebarListLink" data-bs-dismiss="offcanvas">Cart - 購物車</div>
                     </router-link>
                     <router-link to="/menber">
-                        <div class="sidebarListLink">Login - 登入</div>
+                        <div class="sidebarListLink" data-bs-dismiss="offcanvas">Login - 登入</div>
                     </router-link>
                 </div>
             </div>
