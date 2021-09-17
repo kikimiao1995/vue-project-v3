@@ -1,8 +1,12 @@
-import { createStore } from 'vuex'
+import { createStore } from 'vuex';
+import products from '../assets/product';
 
 export default createStore({
   state: {
-    cart:"購物車清單",
+    products: products,
+    //  add {ProductId, ProductQuantity} to cart
+    cart:[],
+    count:'test123',
     shoplist:[
       {
         ProductTitle: "海島の伝説",
@@ -17,8 +21,14 @@ export default createStore({
     total:0,
   },
   mutations: {
+    increment (state) {
+      state.count++
+    }
   },
   actions: {
+    increment (context) {
+      context.commit('increment')
+    }
   },
   modules: {
   }

@@ -21,3 +21,7 @@ $color-golden:#ccac00;
         border-bottom: 2px solid lighten($color-golden, 5%);
     }
 }
+// 清除Chrome預設的input藍色編框
+input:focus {
+    outline: none;
+}

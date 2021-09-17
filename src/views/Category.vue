@@ -8,7 +8,7 @@
                         <span class="badge bg-primary rounded-pill text-end">14</span>
                     </a>
                     <a href="#" class="list-group-item">訂製蛋糕 🎂</a>
-                    <a href="#" class="list-group-item">杯子蛋糕 🍵</a>
+                    <a href="#" class="list-group-item" @click="getCupcake()">杯子蛋糕 🍵</a>
                     <a href="#" class="list-group-item">精緻小點</a>
                     <a href="#" class="list-group-item">經典馬卡龍</a>
                     <a href="#" class="list-group-item">下午茶必備</a>
@@ -17,20 +17,20 @@
             <div class="col-12 col-md-8">
                 <div class="row">
                     <div class="col-10 col-md-6 col-lg-4"
-                        v-for= "item in products" :key="item.ProductId">
+                        v-for= "item in category" :key="item.id">
                         <div class="card products">
-                            <img :src="item.ProductImg" class="card-img-top" alt="...">
+                            <img :src="item.img" class="card-img-top" alt="...">
                             <div class="card-body text-start">
-                                <h5 class="card-title d-flex justify-content-between align-items-baseline">{{ item.ProductTitle}}
-                                    <span class="category-tag rounded-pill">{{ item.ProductCategory }}</span>
+                                <h5 class="card-title d-flex justify-content-between align-items-baseline">{{ item.title}}
+                                    <span class="category-tag rounded-pill">{{ item.category }}</span>
                                 </h5>
-                                <p class="card-text description">{{ item.ProductDescription }}</p>
+                                <p class="card-text description">{{ item.description }}</p>
                                 <div class="price-box">
                                     <del>NT$1000</del>
                                     <div class="price">NT$9999</div>
                                 </div>
                                 <button class="cartbtn" type="button"
-                                    @click="getProduct(item)">加入購物車</button>
+                                    @click="getProduct()">加入購物車</button>
                             </div>
                         </div>
                     </div>
@@ -70,19 +70,29 @@
                 </div> -->
 </template>
 <script>
-import products from '../assets/product.js'
+import { mapState } from 'vuex';
 export default {
     name:"Category",
-    data(){
+    data() {
         return {
-            products:products,
+            list:[],
+            category:this.$store.state.products, // 為什麼不能直接用this.products
         }
+    },
+    computed: {
+        ...mapState({
+            products:'products',
+            count:'count'
+        }),
     },
     methods: {
         getProduct(item){
             let index = item.ProductId;
             console.log(index);
         },
+        getCupcake() {
+            return this.category.filter(item => item.category === "杯子蛋糕")
+        }
     },
 }
 </script>
