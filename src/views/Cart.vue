@@ -1,4 +1,5 @@
 <template>
+    <ShoppingFlow />
     <div class="cart py-5">
         <div class="shopping-flowchart my-4 container">
             <div class="step">
@@ -79,8 +80,12 @@
     </div>
 </template>
 <script>
+import ShoppingFlow from '@/components/ShoppingFlow.vue'
 export default {
     name:"Cart",
+    components: {
+        ShoppingFlow
+    },
     data () {
         return {
             loading:false,
