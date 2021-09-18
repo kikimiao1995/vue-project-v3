@@ -1,14 +1,14 @@
 <template lang="pug">
-    .shopping-flow
-        .step 
-            span 1
-            p 購物車
-        .step 
-            span 2
-            p 購物車
-        .step 
-            span 3
-            p 購物車
+.shopping-flow
+    .step 
+        span 1
+        p 購物車
+    .step 
+        span 2
+        p 購物車
+    .step 
+        span 3
+        p 購物車
 </template>
 <script>
 export default {
