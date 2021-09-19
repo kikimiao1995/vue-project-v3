@@ -1,56 +1,38 @@
 <template>
-    <div class="container my-5">
-        <div class="row">
-            <div class="productList col-12 col-md-3 mb-sm-5">
-                <div class="list-group">
-                    <a href="#" class="list-group-item">
-                        所有商品 🗳
-                        <span class="badge bg-primary rounded-pill text-end">14</span>
-                    </a>
-                    <a href="#" class="list-group-item">訂製蛋糕 🎂</a>
-                    <a href="#" class="list-group-item" @click="getCupcake()">杯子蛋糕 🍵</a>
-                    <a href="#" class="list-group-item">精緻小點</a>
-                    <a href="#" class="list-group-item">經典馬卡龍</a>
-                    <a href="#" class="list-group-item">下午茶必備</a>
+    <div class="wrapper py-5">
+        <div class="container">
+            <div class="row">
+                <div class="productList col-12 col-md-3 mb-sm-5">
+                    <div class="list-group list-group">
+                        <a href="#" class="list-group-item">
+                            所有商品 🗳
+                            <span class="badge bg-primary rounded-pill text-end">14</span>
+                        </a>
+                        <a href="#" class="list-group-item">訂製蛋糕 🎂</a>
+                        <a href="#" class="list-group-item" @click="getCupcake()">杯子蛋糕 🍵</a>
+                        <a href="#" class="list-group-item">精緻小點</a>
+                        <a href="#" class="list-group-item">經典馬卡龍</a>
+                        <a href="#" class="list-group-item">下午茶必備</a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-8">
-                <div class="row">
-                    <div class="col-10 col-md-6 col-lg-4"
-                        v-for= "item in category" :key="item.id">
-                        <div class="card products">
-                            <img :src="item.img" class="card-img-top" alt="...">
-                            <div class="card-body text-start">
-                                <h5 class="card-title d-flex justify-content-between align-items-baseline">{{ item.title}}
-                                    <span class="category-tag rounded-pill">{{ item.category }}</span>
-                                </h5>
-                                <p class="card-text description">{{ item.description }}</p>
-                                <div class="price-box">
-                                    <del>NT$1000</del>
-                                    <div class="price">NT$9999</div>
+                <div class="col-12 col-md-8">
+                    <div class="row justify-content-center">
+                        <div class="col-10 col-md-6 col-lg-6"
+                            v-for= "item in category" :key="item.id">
+                            <div class="products card">
+                                <img :src="item.img" class="card-img-top" alt="...">
+                                <div class="card-body text-start">
+                                    <h5 class="card-title d-flex justify-content-between align-items-baseline">{{ item.title}}
+                                        <span class="category-tag rounded-pill">{{ item.category }}</span>
+                                    </h5>
+                                    <p class="card-text description">{{ item.description }}</p>
+                                    <div class="price-box">
+                                        <del>NT$1000</del>
+                                        <div class="price">NT$9999</div>
+                                    </div>
+                                    <button class="cartbtn" type="button"
+                                        @click="getProduct()">加入購物車</button>
                                 </div>
-                                <button class="cartbtn" type="button"
-                                    @click="getProduct()">加入購物車</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10 col-md-6 col-lg-4">
-                        <div class="card products">
-                            <img src="../assets/images/cupcake2001.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-10 col-md-6 col-lg-4">
-                        <div class="card">
-                            <img src="https://picsum.photos/g/300/300" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
                             </div>
                         </div>
                     </div>
@@ -100,6 +82,9 @@ export default {
 $list-group-color:#2c3e50;
 $list-group-bg: yellow;
 $bg:#f4ceda;
+.wrapper{
+    background: lighten(grey,46%);
+}
 .products{
     img{
         // height: 300px;
