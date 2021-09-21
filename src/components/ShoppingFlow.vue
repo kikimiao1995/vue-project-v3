@@ -1,46 +1,64 @@
 <template lang="pug">
-.shopping-flow
-    .step 
-        span 
-        p 購物車
-    .step 
-        span 
-        p 購物車
-    .step 
-        span 
-        p 購物車
+.bg-lightgrey.pt-5
+    .container.pt-5
+        .shopping-flow
+            .line
+            .step.active
+                span( style="--step-content:'1'" )
+                p 購物車
+            .step 
+                span( style="--step-content:'2'" )
+                p 填寫資料
+            .step 
+                span( style="--step-content:'3'" ) 
+                p 訂單確認
 </template>
 <script>
 export default {
-    name:"shoppingFlow",
+    name:"ShoppingFlow",
 }
 </script>
-<style lang="scss"  scoped>
-    .shopping-flow{
-  display: table; // 解決子層inline-block之間的空格
-  margin:0 auto;  // why 沒有水平置中 =>加上display: table就有了？why =>
-}
-.step{
-    display: inline-block;
-    max-width: 33%; // 33%不能自適應誒why？ =>加上inline-block間的空格會超過100%掉到下一行
-    width: 240px;
-    span{
-        outline: 1px solid blue;
-        display: block;
-        padding: 20px;
-        text-align: center;
-        // vertical-align: middle; // property is ignored ?
-        position: relative; // 讓偽元素（position: absolute;）以span為基準去調整位置
-        &::before{
-        content:var(--step);
-        background: lighten(grey,30%);
-        padding: 8px 14px;
-        border-radius: 20px;
+<style lang="scss">
+.shopping-flow{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .line{
+        min-width: calc(90% / 6 * 4) ;
+        position: absolute;
+        border-bottom:2px solid lighten(grey,33%);
+        top: 25px;
+        z-index:10;
+    }
+    .step{
+        min-width:30%;
+        max-width: 240px;
+        position: relative;
+        span{
+            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+            width: 100%;
+            &::before{
+                content:var(--step-content);
+                position: absolute;
+                background: lighten(grey,33%);
+                padding: 8px 16px;
+                border-radius: 20px;
+                z-index: 20;
+            }
+        }
+        p{
+            padding-top: 8px;
+            text-align: center;
         }
     }
-    p{
-        outline: 1px solid red;
-    }
+    .step.active span::before{
+                background: lighten(#2c3e50,20%);
+                color:white;
+            }
 }
 
 </style>

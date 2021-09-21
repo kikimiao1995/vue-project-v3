@@ -11,7 +11,9 @@
     "@popperjs/core": "^2.9.3",
     "bootstrap": "^5.1.0",
     "core-js": "^3.6.5",
+    "swiper": "^7.0.6",
     "vue": "^3.0.0",
+    "vue-awesome-swiper": "^4.1.1",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
   },

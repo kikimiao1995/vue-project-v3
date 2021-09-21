@@ -1,5 +1,8 @@
 <template>
-    <div>contact</div>
+    <div class="contact">
+        
+    </div>
+
 </template>
 <script>
 export default {

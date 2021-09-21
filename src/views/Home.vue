@@ -1,5 +1,7 @@
 <template>
   <div class="home">
+    <!-- <SwiperBanner /> -->
+    <Swiper />
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
@@ -8,11 +10,15 @@
 <script>
 // @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+// import SwiperBanner from '@/components/SwiperBanner.vue'
+import Swiper from '@/components/Swiper.vue'
 
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    HelloWorld,
+    // SwiperBanner,
+    Swiper
   }
 }
 </script>

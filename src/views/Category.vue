@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper py-5">
+    <div class="p-outer bg-lightgrey">
         <div class="container">
             <div class="row">
                 <div class="productList col-12 col-md-3 mb-sm-5">
@@ -8,7 +8,7 @@
                             所有商品 🗳
                             <span class="badge bg-primary rounded-pill text-end">14</span>
                         </a>
-                        <a href="#" class="list-group-item">訂製蛋糕 🎂</a>
+                        <a href="#" class="list-group-item mb-3">訂製蛋糕 🎂</a>
                         <a href="#" class="list-group-item" @click="getCupcake()">杯子蛋糕 🍵</a>
                         <a href="#" class="list-group-item">精緻小點</a>
                         <a href="#" class="list-group-item">經典馬卡龍</a>
@@ -40,16 +40,6 @@
             </div>
         </div>
     </div>
-<!-- <div class="card">
-                    <img src="https://picsum.photos/g/300/300" alt="...">
-                    <p class="Product-category-tag">生日蛋糕</p>
-                    <h4 class="Product-title">幸運加倍蛋糕</h4>
-                    <p class="Product-description"></p>
-                    <div class="price-box">
-                        <del>NT$1000</del>
-                    </div>
-                    <button type="button">加入購物車</button>
-                </div> -->
 </template>
 <script>
 import { mapState } from 'vuex';

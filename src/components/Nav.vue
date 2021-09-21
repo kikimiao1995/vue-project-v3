@@ -67,7 +67,7 @@
     
 <script>
     export default {
-        name:'nav',
+        name:'Nav',
         data(){
             return{
             }

@@ -1,20 +1,6 @@
 <template>
     <ShoppingFlow />
-    <div class="cart py-5">
-        <div class="shopping-flowchart my-4 container">
-            <div class="step">
-                <span class="step-badge">1</span>
-                <p>購物車</p>
-            </div>
-            <div class="step">
-                <span class="step-badge">2</span>
-                <p>填寫資料</p>
-            </div>
-            <div class="step">
-                <span class="step-badge">3</span>
-                <p>訂單確認</p>
-            </div>
-        </div>
+    <div class="cart py-5 bg-lightgrey">
         <div class="container">
             <div class="row justify-content-lg-center">
                 <div class="col-12 col-lg-7 mb-5 mb-lg-0">
@@ -102,37 +88,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.cart{
-    background: lighten(grey,46%); // .bg-light 更淺一點
-}
-.step{
-    display: inline-block;
-    width: 240px;
-    max-width: 33%;
-    .step-badge{
-        position: relative;
-        display: block;
-        z-index: 1;
-        &::after{
-            // content: '';
-            // position: absolute;
-            // width: 36px;
-            // height: 36px;
-            // border-radius: 18px;
-            // background-color: lighten(grey,10%);
-            // z-index: -1;
-        }
-        &:not(:last-child)::before{
-            content: '';
-            position: absolute;
-            top: 50%;
-            height: 1px;
-            background: #000;
-            width:100%;
-        }
-    }
-}
-
 .cartTitle{
     background: lighten(grey,33%);
 }
