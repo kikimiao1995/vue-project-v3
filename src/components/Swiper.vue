@@ -9,44 +9,44 @@
     </swiper>
 </template>
 <script>
-// // Import Swiper Vue.js components
-// import { Swiper, SwiperSlide } from 'swiper/vue';
+// Import Swiper Vue.js components
+import { Swiper, SwiperSlide } from 'swiper/vue';
 
-// // Import Swiper styles
-// // import 'swiper/css';
+// Import Swiper styles
+// import 'swiper/css';
 
-// // import style (>= Swiper 6.x)
-// import 'swiper/swiper-bundle.css'
+// import style (>= Swiper 6.x)
+import 'swiper/swiper-bundle.css'
 
-// import "swiper/css/pagination"
-// import "swiper/css/navigation"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
 
-// // import './style.css';
-
-
-// // import Swiper core and required modules
-// import SwiperCore, {
-//     Pagination,Navigation
-// } from 'swiper';
-
-// // install Swiper modules
-// SwiperCore.use([Pagination,Navigation]);
+// import './style.css';
 
 
-// export default {
-//     components: {
-//         Swiper,
-//         SwiperSlide,
-//     },
-//     data() {
-//         return {
+// import Swiper core and required modules
+import SwiperCore, {
+    Pagination,Navigation
+} from 'swiper';
+
+// install Swiper modules
+SwiperCore.use([Pagination,Navigation]);
+
+
+export default {
+    components: {
+        Swiper,
+        SwiperSlide,
+    },
+    data() {
+        return {
             
             
-//         };
-//     },
-//     methods: {
+        };
+    },
+    methods: {
         
-//     }
+    }
     
-// }
+}
 </script>

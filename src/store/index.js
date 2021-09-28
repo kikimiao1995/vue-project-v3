@@ -3,29 +3,31 @@ import products from '../assets/product';
 
 export default createStore({
   state: {
-    products: products,
+    products: [...products],
     //  add {ProductId, ProductQuantity} to cart
     cart:[],
-    count:'test123',
-    shoplist:[
-      {
-        ProductTitle: "海島の伝説",
-        ProductId: 1001,
-        ProductCategory: "訂製蛋糕",
-        ProductImg: "../assets/images/cake1001.jpg",
-        ProductPrcie: 900,
-        ProductQuantity: "0",
-        ProductDescription: "傳說孕育無數生命的太平洋，在月光下的照耀下，灌溉以徐徐的海風，將花開成神秘的海水藍...，復刻神秘傳說。",
-      },
-    ],
     total:0,
   },
-  mutations: {
-    increment (state) {
-      state.count++
+  getters: {
+    getTotalNum() {
+
     }
   },
+  mutations: {
+    addToCart(state, payload) {
+      state.cart.push(payload); // payload是從元件commit到store mutation 的data，透過mutation寫入state
+    },
+    // increment (state) {
+    //   state.count++
+    // }
+  },
   actions: {
+    fetchProducts() {
+      // api :fetch('url').then(res => json())
+      //                  .then(data => context.commit('setProductInfo', data))
+      // 通常會在元件的created來發送dispatch
+      // this.$store.dispatch('setProducts', {id:'008'});
+    },
     increment (context) {
       context.commit('increment')
     }
