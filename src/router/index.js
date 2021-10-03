@@ -1,10 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
-import Category from '../views/Category.vue'
-import Class from '../views/Class.vue'
-import Contact from '../views/Contact.vue'
-import Cart from '../views/Cart.vue'
-import Menber from '../views/Menber.vue'
 
 const routes = [
   {
@@ -15,27 +10,27 @@ const routes = [
   {
     path: "/category",
     name: "Category",
-    component: Category,
+    component: () => import( /* webpackChunkName: "category" */ '../views/Category.vue')
   },
   {
     path: "/class",
     name: "Class",
-    component: Class,
+    component: () => import( /* webpackChunkName: "class" */ '../views/Class.vue')
   },
   {
     path: "/contact",
     name: "Contact",
-    component: Contact,
+    component: () => import( /* webpackChunkName: "contact" */ '../views/Contact.vue'),
   },
   {
     path: "/cart",
     name: "Cart",
-    component: Cart,
+    component: () => import( /* webpackChunkName: "cart" */ '../views/Cart.vue')
   },
   {
     path: "/menber",
     name: "Menber",
-    component: Menber,
+    component: () => import( /* webpackChunkName: "menber" */ '../views/Menber.vue'),
   },
   {
     path: '/about',

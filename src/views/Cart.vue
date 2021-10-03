@@ -67,11 +67,11 @@
             </div>
         </div>
     </div>
-    <div v-else>
-        <div class="container my-5">
+    <div v-else class="bg-lightgrey py-5">
+        <div class="container mt-5">
             <div class="row justify-content-center text-center">
                 <div class="col-9 col-lg-6 my-2">
-                    <img class="rounded" src="../assets/images/draw.jpg" alt="logo">
+                    <!-- <img class="rounded" src="../assets/images/draw.jpg" alt="logo"> -->
                     <p class="ms-3 my-3">Oops～您的購物車是空的喔！繼續購物吧～ 🔙</p>
                 </div>
                 <BtnSwipeRight />
