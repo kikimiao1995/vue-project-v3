@@ -68,25 +68,25 @@
         </div>
     </div>
     <div v-else>
-        <div class="container my-5 py-lg-5">
+        <div class="container my-5">
             <div class="row justify-content-center text-center">
-                <div class="ms-3 ps-5">
-                    <router-link class="btn btn-dark" to="/category#">繼續購物</router-link>
-                </div>
                 <div class="col-9 col-lg-6 my-2">
                     <img class="rounded" src="../assets/images/draw.jpg" alt="logo">
-                    <p class="ms-3 ps-5 my-3">Oops～您的購物車是空的喔！🔙</p>
+                    <p class="ms-3 my-3">Oops～您的購物車是空的喔！繼續購物吧～ 🔙</p>
                 </div>
+                <BtnSwipeRight />
             </div>
         </div>
     </div>
 </template>
 <script>
 import ShoppingFlow from '@/components/ShoppingFlow.vue'
+import BtnSwipeRight from '@/components/BtnSwipeRight.vue'
 export default {
     name:"Cart",
     components: {
-        ShoppingFlow
+        ShoppingFlow,
+        BtnSwipeRight
     },
     data () {
         return {
@@ -145,25 +145,24 @@ export default {
 
 // .btn 共用的basic樣式
 .btn {
-    display: inline-block;
     border: 1px solid #2c3e50;
-    letter-spacing: 3px;
+    padding: 8px 16px;
+    &:focus {  
+    box-shadow: none;
+    } 
 }
+
+// 可以把這個寫進@mixin
+.btn:hover {
+    transform: translate(2px, -2px);
+}
+.btn:active {
+    transform: translate(0px, 0px);
+}
+
 //.btn 延伸樣式
 .btn-dark {
     background: #2c3e50;
 }
 
-// empty cart
-$color-golden:#ccac00;
-a {
-    
-    &.router-link-exact-active {
-        color: darken($color-golden, 7%);
-    }
-    &:hover {
-        color: lighten($color-golden, 5%);
-        border-bottom: 2px solid lighten($color-golden, 5%);
-    }
-}
 </style>

@@ -141,8 +141,9 @@ $bg:#f4ceda;
 }
 
 // hover效果
-.products:hover,
-.list-group-item:hover{
+// .products:hover,
+.list-group-item:hover,
+.cartbtn:hover {
     transform: translate(2px, -2px);
 }
 // 點擊後押回的css效果
@@ -151,6 +152,7 @@ $bg:#f4ceda;
 .cartbtn:active {
     transform: translate(0px, 0px);
 }
+
 
 
 .cartbtn{
@@ -162,9 +164,6 @@ $bg:#f4ceda;
     color:#fff;
     &:hover{
         background: darken(#DAC9A6,10%);
-    }
-    &:focus{
-
     }
 }
 
