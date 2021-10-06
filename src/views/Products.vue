@@ -25,7 +25,7 @@
                 <div class="col-11 col-md-8">
                     <div class="row justify-content-start">
                         <div class="col-12 col-md-6 col-lg-4 mb-4"
-                            v-for= "item in filterCategory" 
+                            v-for= "item in categoryFilter" 
                             :key="item.id">
                             <div class="products card">
                                 <img :src="item.img" class="card-img-top" alt="item.title">
@@ -46,23 +46,26 @@
     </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+// 導入模組將需要的vuex傳入*.vue元件中，其中state與getter在computed中引入，mutation與action則在methods中引入。
+import { mapState,mapActions } from 'vuex';
 export default {
-    name:"Category",
+    name:"Products",
     components: {
     },
     data() {
         return {
-            filterCategory: [],
+            categoryFilter: [],
             catNum:{cake:0,cupcake:0,tiny:0,macaron:0,tea:0},
         }
     },
     methods: {
+        ...mapActions('products',['fetchProductInfo']),
         getAll() {
-            this.filterCategory = [ ...this.products ];
+            this.categoryFilter = [ ...this.products ];
+            console.log('categoryFilter',this.categoryFilter );
         },
         getCategory(itemCat) {
-            return this.filterCategory = this.products.filter(item => item.category === itemCat);
+            return this.categoryFilter = this.products.filter(item => item.category === itemCat);
         },
         getCatNum() {
             this.products.forEach((item) => {
@@ -96,11 +99,12 @@ export default {
     },
     computed: {
         ...mapState({
-            products:'products',
+            products: state => state.products.products, // 使用模組的引入方式，第一個products是模組名，第二個是state名
         }),
     },
     created() {
-        this.getAll();  // 將vuex的資料以spread syntax傳入
+        this.fetchProductInfo();    
+        this.getAll();
         this.getCatNum(); // 計算各個分類的總數
     },
 }
@@ -151,6 +155,10 @@ $bg:#f4ceda;
 .list-group-item:active,
 .cartbtn:active {
     transform: translate(0px, 0px);
+}
+.list-group-item:hover,
+.products:hover {
+    box-shadow: 0 0 10px 1px lighten(grey,25%);
 }
 
 
