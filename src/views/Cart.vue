@@ -1,5 +1,15 @@
 <template>
-    <div v-if="cart.length >  0">
+    <div v-if="cart.length <=  0" class="bg-lightgrey py-5">
+        <div class="container mt-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-9 col-lg-6 my-2">
+                    <p class="ms-3 my-3">Oops～您的購物車是空的喔！繼續購物吧～ 🔙</p>
+                </div>
+                <BtnSwipeRight />
+            </div>
+        </div>
+    </div>
+    <div v-else>
         <ShoppingFlow />
         <div class="cart py-5 bg-lightgrey">
             <div class="container">
@@ -64,17 +74,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    <div v-else class="bg-lightgrey py-5">
-        <div class="container mt-5">
-            <div class="row justify-content-center text-center">
-                <div class="col-9 col-lg-6 my-2">
-                    <!-- <img class="rounded" src="../assets/images/draw.jpg" alt="logo"> -->
-                    <p class="ms-3 my-3">Oops～您的購物車是空的喔！繼續購物吧～ 🔙</p>
-                </div>
-                <BtnSwipeRight />
             </div>
         </div>
     </div>
@@ -143,26 +142,29 @@ export default {
     padding: 10px 0px;
 }
 
-// .btn 共用的basic樣式
-.btn {
-    border: 1px solid #2c3e50;
-    padding: 8px 16px;
-    &:focus {  
-    box-shadow: none;
-    } 
-}
 
-// 可以把這個寫進@mixin
-.btn:hover {
-    transform: translate(2px, -2px);
-}
-.btn:active {
-    transform: translate(0px, 0px);
-}
+// // ---- .btn 共用的basic樣式-----
+// .btn {
+//     border: 1px solid #2c3e50;
+//     padding: 8px 16px;
+//     &:focus {  
+//     box-shadow: none;
+//     } 
+// }
 
-//.btn 延伸樣式
-.btn-dark {
-    background: #2c3e50;
-}
+// // 可以把這個寫進@mixin
+// // **** 手機沒有:hover的功能喔！！
+// // :focus 是input才有？
+// .btn:hover {
+//     transform: translate(2px, -2px);
+// }
+// .btn:active {
+//     transform: translate(0px, 0px);
+// }
+
+// //.btn 延伸樣式
+// .btn-dark {
+//     background: #2c3e50;
+// }
 
 </style>

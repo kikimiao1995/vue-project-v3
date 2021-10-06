@@ -8,7 +8,7 @@
             <div class="nav-title fw-bold">About</div>
             <div class="nav-subtitle">關於</div>
         </router-link> |
-        <router-link to="/category">
+        <router-link to="/products">
             <div class="nav-title fw-bold">Category</div>
             <div class="nav-subtitle">商品分類</div>
         </router-link> |
