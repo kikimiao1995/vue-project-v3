@@ -30,6 +30,6 @@ input:focus {
 }
 
 ::selection {
-    background-color: #ccac00;
-    color: #fff;
+    background-color: lighten(#ccac00,20%);
+    color: #2c3e50;
 }
