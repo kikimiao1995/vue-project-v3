@@ -1,6 +1,6 @@
 <template>
     <div class="btn-swipe-right d-flex justify-content-center text-center my-5">
-        <router-link to="/products#">
+        <router-link to="/products#section-nav">
             <span>繼續購物</span>
         </router-link>
     </div>
