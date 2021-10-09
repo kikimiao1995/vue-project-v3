@@ -28,3 +28,8 @@ input:focus {
 .bg-lightgrey {
     background: lighten(grey, 46%); // .bg-light 更淺一點
 }
+
+::selection {
+    background-color: #ccac00;
+    color: #fff;
+}
