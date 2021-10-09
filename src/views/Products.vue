@@ -35,7 +35,7 @@
                                         <div><del>${{ item.price }} NTD</del></div>
                                         <div class="price fs-5 ms-3 text-red fw-bold">$9999 NTD</div>
                                     </div>
-                                    <button class="cartbtn mt-2" type="button" @click="addToCart(item)">加入購物車</button>
+                                    <button class="cartbtn mt-2" type="button" @click="addProductsToCart(item)">加入購物車</button>
                                 </div>
                             </div>
                         </div>
@@ -47,7 +47,7 @@
 </template>
 <script>
 // 導入模組將需要的vuex傳入*.vue元件中，其中state與getter在computed中引入，mutation與action則在methods中引入。
-import { mapState,mapActions } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 export default {
     name:"Products",
     components: {
@@ -62,7 +62,6 @@ export default {
         ...mapActions('products',['fetchProductInfo']),
         getAll() {
             this.categoryFilter = [ ...this.products ];
-            console.log('categoryFilter',this.categoryFilter );
         },
         getCategory(itemCat) {
             return this.categoryFilter = this.products.filter(item => item.category === itemCat);
@@ -86,16 +85,20 @@ export default {
                 }
             })
         },
-        addToCart(item) {
-            this.$store.commit({
-                type:"addToCart",
-                id:item.id,
-                name: item.name,
-                quantity:1,
-                img: item.img,
-                price:900,
-            });
+        addProductsToCart(item) {
+            this.$store.dispatch('cart/addProductsToCart',item);
+            console.log(item);
         },
+        // addProductsToCart(item) {
+        //     return this.$store.commit({
+        //         type:"addProductsToCart",
+        //         id:item.id,
+        //         name: item.name,
+        //         quantity:1,
+        //         img: item.img,
+        //         price:900,
+        //     });
+        // },
     },
     computed: {
         ...mapState({
