@@ -81,6 +81,7 @@
 <script>
 import ShoppingFlow from '@/components/ShoppingFlow.vue'
 import BtnSwipeRight from '@/components/BtnSwipeRight.vue'
+import { mapState } from 'vuex'
 export default {
     name:"Cart",
     components: {
@@ -93,10 +94,12 @@ export default {
         }
     },
     computed: {
-        cart(){
-            return this.$store.state.cart;
-        },
-    }
+        ...mapState({
+            //分別引入cart與products的state
+            cart: (state) => state.cart.cart,
+            products: (state) => state.cart.products,
+        }),
+    },
 }
 </script>
 <style lang="scss" scoped>
