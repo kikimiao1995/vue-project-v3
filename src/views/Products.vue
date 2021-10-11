@@ -28,9 +28,12 @@
                             v-for= "item in categoryFilter" 
                             :key="item.id">
                             <div class="products card">
+                                <div v-if="item.inventory == 0" class="soldOut">
+                                    <span>今日已銷售完畢</span>
+                                </div>
                                 <img :src="item.img" class="card-img-top" alt="item.title">
                                 <div class="card-body text-start d-flex flex-column justify-content-center align-items-center">
-                                    <h5 class="card-title">{{ item.title}}</h5>
+                                    <h5 class="card-title">{{ item.name}}</h5>
                                     <div class="price-box d-flex justify-content-center align-items-center">
                                         <div><del>${{ item.price }} NTD</del></div>
                                         <div class="price fs-5 ms-3 text-red fw-bold">$9999 NTD</div>
@@ -118,7 +121,7 @@ export default {
 .btn-dark:active:focus {  
     box-shadow: none;
 }
-$list-group-color:#2c3e50;
+$primary-color:#2c3e50;
 $list-group-bg: yellow;
 $bg:#f4ceda;
 .category-list{
@@ -134,6 +137,7 @@ $bg:#f4ceda;
 }
 
 .products{
+    position: relative;
     img{
         // height: 300px;
         object-fit:cover;
@@ -144,6 +148,24 @@ $bg:#f4ceda;
         color: #b22222;
         font-size: 10px;
         padding: 6px;
+    }
+}
+.soldOut {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background:rgba(133, 132, 132, 0.5);
+    span {
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 20%;
+        background: lighten($primary-color,30%);
+        color: #fff;
+        font-size: 11px;
+        letter-spacing: 2px;
+        padding: 20px 0px;
     }
 }
 
