@@ -15,9 +15,7 @@ const actions = {
     // 按下“加入購物車”btn後，會進行的邏輯判斷
     addProductsToCart(context, product) {
         if (product.inventory >0 ) {
-            console.log("可以購買");
             let isIncart = context.state.cart.find(item => item.id === product.id) // 判斷是否已經在購物車裡面了
-            console.log(!isIncart, "cartItem");
             if (!isIncart) {
                 context.commit('PushProductsToCart',product.id)
             }

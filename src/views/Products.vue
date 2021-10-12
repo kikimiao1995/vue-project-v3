@@ -90,7 +90,6 @@ export default {
         },
         addProductsToCart(item) {
             this.$store.dispatch('cart/addProductsToCart',item);
-            console.log(item);
         },
         // addProductsToCart(item) {
         //     return this.$store.commit({
