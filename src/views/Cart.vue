@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="col-2">${{ item.price }}</div>
                                     <div class="col-2 col-md-2">
-                                        <span class="deleteItem">x</span>
+                                        <span class="deleteItem" @click="deleteProductFromCart(item)">x</span>
                                     </div>
                                 </div>
                             </div>
@@ -95,6 +95,11 @@ export default {
             carts: (state) => state.cart.carts,
             products: (state) => state.products.products,
         }),
+    },
+    methods: {
+        deleteProductFromCart(item) {
+            this.$store.dispatch('cart/deleteProductFromCart',item);
+        },
     },
 }
 </script>

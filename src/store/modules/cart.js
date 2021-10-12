@@ -10,6 +10,9 @@ const mutations = {
             quantity:1,
         });  // payload是從元件commit到store mutation 的data，透過mutation寫入state
     },
+    deleteProductFromCart(state, index) {
+        state.carts.splice(index,1); 
+    }
 }
 const actions = {
     // 按下“加入購物車”btn後，會進行的邏輯判斷
@@ -23,7 +26,11 @@ const actions = {
             alert("商品已經賣完了ＱＱ");
             // 這裡要寫出disable的style 讓商品分的的button沒有作用，整個card黑色的
         }
-    }
+    },
+    deleteProductFromCart(context, product) {
+        let index = context.state.carts.findIndex(cart => cart === product.id);
+        context.commit('deleteProductFromCart', index);
+    },
 }
 
 export default {
