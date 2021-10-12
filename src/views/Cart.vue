@@ -1,5 +1,5 @@
 <template>
-    <div v-if="cart.length <=  0" class="bg-lightgrey py-5">
+    <div v-if="carts.length <=  0" class="bg-lightgrey py-5">
         <div class="container mt-5">
             <div class="row justify-content-center text-center">
                 <div class="col-9 col-lg-6 my-2">
@@ -26,14 +26,11 @@
                                 </div>
                             </div>
                             <div class="cartItem"
-                                v-for="item in cart"
+                                v-for="item in carts"
                                 :key="item.id">
                                 <div class="row my-4 align-items-center">
                                     <div class="col-5 col-md-5 col-lg-6 d-flex align-items-center justify-content-center">
                                         <div class="cart-img d-none d-md-block" :style="`background-image:url('${ item.img }')`"></div>
-                                        <!-- <div class="cart-img d-none d-md-block">
-                                            <img :src="item.img" alt="item.title">
-                                        </div> -->
                                         <div class="mx-3">
                                             <div class="fw-bold">{{ item.name }}</div>
                                             <div>${{ item.price }} NTD</div>
@@ -56,11 +53,11 @@
                             <h4 class="py-3">訂單資訊</h4>
                             <table class="table">
                                 <tbody>
-                                    <tr v-for="item in cart"
+                                    <tr v-for="item in carts"
                                         :key="item.id">
                                         <td >{{ item.name }}</td>
                                         <td>{{ item.quantity }}</td>
-                                        <td class="text-right">NT$1000</td>
+                                        <td class="text-right">NT${{ item.price }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -95,9 +92,8 @@ export default {
     },
     computed: {
         ...mapState({
-            //分別引入cart與products的state
-            cart: (state) => state.cart.cart,
-            products: (state) => state.cart.products,
+            carts: (state) => state.cart.carts,
+            products: (state) => state.products.products,
         }),
     },
 }

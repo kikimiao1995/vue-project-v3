@@ -25,7 +25,6 @@ const actions = {
     fetchProductInfo( { commit }) {
         commit('setProducts', data);
     }
-
 }
 
 export default {
