@@ -81,7 +81,7 @@ const products = [
         description: "結合經典的oreo，搭配濃郁的100%法芙娜巧克力"
     },
     {
-        name: "聖誕造型餅乾",
+        name: "造型餅乾",
         id: 3001,
         category: "精緻小點",
         img: require("@/assets/images/tiny3001.jpg"),
@@ -90,7 +90,7 @@ const products = [
         description: "最簡單的甜點，卻滿載童年天馬行空的想像，吃一口吧！坐上時光機，來場放鬆的白日夢之旅～"
     },
     {
-        name: "巧克力餅乾",
+        name: "手工餅乾",
         id: 3002,
         category: "精緻小點",
         img: require("@/assets/images/tiny3002.jpg"),
@@ -99,7 +99,7 @@ const products = [
         description: "最簡單的甜點，卻滿載童年天馬行空的想像，吃一口吧！坐上時光機，來場放鬆的白日夢之旅～"
     },
     {
-        name: "伯爵馬卡龍",
+        name: "馬卡伯爵",
         id: 4001,
         category: "馬卡龍",
         img: require("@/assets/images/macaron4001.jpg"),
@@ -108,7 +108,7 @@ const products = [
         description: "最簡單的甜點，卻滿載童年天馬行空的想像，吃一口吧！坐上時光機，來場放鬆的白日夢之旅～"
     },
     {
-        name: "綜合馬卡龍",
+        name: "馬卡綜合",
         id: 4002,
         category: "馬卡龍",
         img: require("@/assets/images/macaron4002.jpg"),
