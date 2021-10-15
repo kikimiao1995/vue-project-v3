@@ -10,7 +10,7 @@
         </div>
     </div>
     <div v-else>
-        <ShoppingFlow />s
+        <ShoppingFlow />
         <div class="cart py-5 bg-lightgrey">
             <div class="container">
                 <div class="row justify-content-lg-center">
