@@ -29,6 +29,22 @@ export default {
             
         }
     },
+    methods: {
+        // 加入購物車，
+        addProductsToCart(productInfo) {
+            this.$store.dispatch('cart/addProductsToCart',productInfo);
+        },
+        // addProductsToCart(item) {
+        //     return this.$store.commit({
+        //         type:"addProductsToCart",
+        //         id:item.id,
+        //         name: item.name,
+        //         quantity:1,
+        //         img: item.img,
+        //         price:900,
+        //     });
+        // },
+    },
     
 }
 </script>
@@ -73,4 +89,38 @@ $list-group-bg: yellow;
         padding: 20px 0px;
     }
 }
+
+.cartbtn{
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: #DAC9A6;
+    border-style: none;
+    color:#fff;
+    &:hover{
+        background: darken(#DAC9A6,10%);
+    }
+}
+
+.text-red{
+    color: #b22222;
+}
+
+// hover效果
+// .products:hover,
+.list-group-item:hover,
+.cartbtn:hover {
+    transform: translate(2px, -2px);
+}
+// 點擊後押回的css效果
+// *****-> 在.cartbtn的小果預計是打勾加入購物車的動畫
+.list-group-item:active,
+.cartbtn:active {
+    transform: translate(0px, 0px);
+}
+.list-group-item:hover,
+.products:hover {
+    box-shadow: 0 0 10px 1px lighten(grey,25%);
+}
+
 </style>
