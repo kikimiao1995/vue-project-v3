@@ -42,18 +42,42 @@
                                 </div>
                             </div>
                         </div>
+                        <ProductCard 
+                            v-for= "product in categoryFilter" 
+                            :productInfo="product"
+                            :key="product.id"/>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-12">
+                    <MyPagination />
+                </div>
+            </div>
         </div>
+        <!-- <div class="col-11 col-md-8">
+            <div class="row justify-content-start">
+                    <div class="col-12 col-md-6 col-lg-4 mb-4">
+                        <ProductCard 
+                            v-for= "product in categoryFilter" 
+                            :productInfo="product"
+                            :key="product.id"/>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </div>
 </template>
 <script>
 // 導入模組將需要的vuex傳入*.vue元件中，其中state與getter在computed中引入，mutation與action則在methods中引入。
 import { mapState, mapActions } from 'vuex';
+import MyPagination from '@/components/MyPagination.vue';
+import ProductCard from '@/components/ProductCard.vue';
 export default {
     name:"Products",
     components: {
+        MyPagination,
+        ProductCard
     },
     data() {
         return {
