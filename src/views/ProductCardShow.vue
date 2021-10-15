@@ -1,13 +1,16 @@
 <template>
     <section class="ProductCard">
-        <h1> {{ hello }} </h1>
+        <h1> {{ productId }} </h1>
     </section>
 </template>
 <script>
 export default {
+    props: {
+        productId: {type:Number, required:true}
+    },
     data() {
         return {
-            hello:this.$route.params,
+            
         }
     },
 }

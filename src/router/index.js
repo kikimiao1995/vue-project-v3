@@ -4,7 +4,7 @@ import Home from '../views/Home.vue'
 const routes = [
   {
     path: '/',
-    alias:'/home', // 路由別名
+    alias: '/home', // 路由別名
     name: 'Home',
     component: Home
   },
@@ -42,8 +42,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/products/:id',
-    component: () => import('../views/ProductCardShow.vue')
+    path: '/products/:productId',
+    name: 'ProductCard.show',
+    component: () => import('../views/ProductCardShow.vue'),
+    // vue 允許將$route.params視為props使用
+    // 1. 在 routes 上加上 props 屬性，
+    // 2. 在元件內上的 props中，加上屬性，如這裡的 ProductCardShow.vue 加上 productId
+    props: route => ({
+      ...route.params,
+      productId: parseInt(route.params.productId) 
+    })
   }
 ]
 
