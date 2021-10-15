@@ -1,9 +1,7 @@
 <template>
     <div>
         <div class="home-banner">
-            <div class="banner_text-box">
-                <h1>make your life a piece of cake!</h1>
-            </div>
+            
         </div>
     </div>
 </template>
@@ -17,7 +15,6 @@ export default {
 <style lang="scss" scoped>
 $color-golden:#ccac00;
 .home-banner {
-    position: relative;
     height: 80vh;
     background-image: 
         url(../assets/images/banner-shop.jpg);
@@ -26,11 +23,11 @@ $color-golden:#ccac00;
 }
 
 .banner_text-box {
-    // 置中，父層要加position: relative;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // // 置中，父層要加position: relative;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
 
     // 文字設定
     color: #fff;
