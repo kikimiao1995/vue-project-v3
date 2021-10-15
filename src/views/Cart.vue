@@ -5,12 +5,12 @@
                 <div class="col-9 col-lg-6 my-2">
                     <p class="ms-3 my-3">Oops～您的購物車是空的喔！繼續購物吧～ 🔙</p>
                 </div>
-                <BtnSwipeRight />
+                <BtnSwipeRight msg="繼續購物" />
             </div>
         </div>
     </div>
     <div v-else>
-        <ShoppingFlow />
+        <ShoppingFlow />s
         <div class="cart py-5 bg-lightgrey">
             <div class="container">
                 <div class="row justify-content-lg-center">
