@@ -1,16 +1,19 @@
 <template>
     <div class="btn-swipe-right d-flex justify-content-center text-center my-5">
         <router-link to="/products#section-nav">
-            <span>繼續購物</span>
+            <span>{{ msg }}</span>
         </router-link>
     </div>
 </template>
 <script>
 export default {
     name:"BtnSwiperRight",
+    props: {
+        msg: String
+    }
 }
 </script>
-<style lang="scss" scope>
+<style lang="scss">
 .btn-swipe-right a{
     display: block;
     width: 150px;
@@ -29,7 +32,7 @@ export default {
 
 .btn-swipe-right a span{
     position: relative;
-    z-index: 2;
+    z-index: 10;
 }
 
 .btn-swipe-right a:after{
