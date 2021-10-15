@@ -22,7 +22,8 @@ export default {
     components: {
     },
     props: {
-        productInfo: Object
+        // productInfo: Object
+        productInfo: { type:Object, required:true,}
     },
     data() {
         return {

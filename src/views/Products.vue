@@ -29,11 +29,9 @@
                             :productInfo="product"
                             :key="product.id"/>
                     </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <MyPagination />
+                    <div class="row justify-content-end">
+                        <MyPagination />
+                    </div>
                 </div>
             </div>
         </div>
