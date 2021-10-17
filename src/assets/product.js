@@ -3,7 +3,7 @@ const products = [
         name: "覆盆塔",
         id:1001,
         category: "訂製蛋糕",
-        img: require("../assets/images/cake1001.jpg"),
+        img: require("@/assets/images/cake1001.jpg"),
         price:600,
         inventory: 0,
         description: "傳說孕育無數生命的太平洋，在月光下的照耀下，灌溉以徐徐的海風，將花開成神秘的海水藍...，復刻神秘傳說。",
