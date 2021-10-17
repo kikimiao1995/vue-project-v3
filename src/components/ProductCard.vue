@@ -11,7 +11,17 @@
                     <div><del>${{ productInfo.price }} NTD</del></div>
                     <div class="price fs-5 ms-3 text-red fw-bold">$9999 NTD</div>
                 </div>
-                <button class="cartbtn mt-2" type="button" @click="addProductsToCart(productInfo)">加入購物車</button>
+            </div>
+            <div class="card-bottom d-flex justify-content-center align-items-center justify-content-around mt-2">
+                <router-link 
+                    :to="{name:'ProductCard.show',
+                        params:{productId:productInfo.id}}">查看更多</router-link>
+                <button class="cartbtn" type="button" @click="addProductsToCart(productInfo)">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-bag-plus" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z"/>
+                        <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z"/>
+                    </svg>
+                </button>
             </div>
         </div>
     </div>
@@ -86,20 +96,32 @@ $list-group-bg: yellow;
         color: #fff;
         font-size: 11px;
         letter-spacing: 2px;
-        padding: 20px 0px;
+        padding: 25px 0px;
+    }
+}
+
+.card-bottom {
+    border-top: 1px solid lighten(grey,35%);
+    padding: 9px 0px;
+    a {
+        display: block;
+        text-decoration: none;
+        color:#2c3e50;
+        font-size: 13px;
+        
     }
 }
 
 .cartbtn{
     display: inline-block;
-    padding: 10px 15px;
-    border-radius: 5px;
-    background: #DAC9A6;
+    padding: 10px 11px;
     border-style: none;
-    color:#fff;
-    &:hover{
-        background: darken(#DAC9A6,10%);
-    }
+    border-radius: 5px;
+    border-radius: 20px;
+    color: $primary-color;
+    // &:hover{
+    //     background: darken(#DAC9A6,10%);
+    // }
 }
 
 .text-red{

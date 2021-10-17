@@ -24,13 +24,10 @@
                 </div>
                 <div class="col-11 col-md-8">
                     <div class="row justify-content-start">
-                        <router-link
-                            v-for= "product in categoryFilter"
-                            :key="product.id"
-                            :to="{name:'ProductCard.show',
-                                params:{productId:product.id}}">
-                            <ProductCard :productInfo="product"/>
-                        </router-link>
+                        <ProductCard 
+                            v-for= "product in categoryFilter" 
+                            :productInfo="product"
+                            :key="product.id"/>
                     </div>
                     <div class="row justify-content-end">
                         <MyPagination />
