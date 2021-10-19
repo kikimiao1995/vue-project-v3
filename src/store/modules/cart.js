@@ -1,8 +1,19 @@
 const state = {
     //  add {ProductId, ProductQuantity} to cartProducts 紀錄加入購物車的商品
     carts: [],
+    productsNum:0,
 }
-const getters = {}
+const getters = {
+    // 計算在購物車中的商品種數
+    countproductsNum(state) {
+        state.productsNum = 0;
+        state.carts.forEach(function(item) {
+            state.productsNum += item.quantity;
+        })
+        // return state.productsNum;
+    }
+    // 計算總購買鍵數
+}
 const mutations = {
     PushProductsToCart(state, product) {
         state.carts.push({
