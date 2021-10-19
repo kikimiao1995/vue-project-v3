@@ -19,7 +19,7 @@
                         </svg>
                     </router-link>
                     <router-link to="/cart" class="cart-link">
-                        <div v-if="carts.length > 0">
+                        <div v-if="productsNum > 0">
                             <span class="cart-badge" :style="`--step-content:'${productsNum}'`"></span>
                         </div>
                         <svg xmlns="http://www.w3.org/2000/svg" width="30px" fill="currentColor" class="bi bi-bag me-2" viewBox="0 0 16 16">
@@ -79,7 +79,6 @@ export default {
     },
     computed: {
         ...mapState({
-            carts: (state) => state.cart.carts,
             productsNum: (state) => state.cart.productsNum,
         }),
     }
