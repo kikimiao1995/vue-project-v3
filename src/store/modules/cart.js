@@ -1,7 +1,6 @@
 const state = {
     //  add {ProductId, ProductQuantity} to cartProducts 紀錄加入購物車的商品
     carts: [],
-    // productsNum:0,
 }
 const getters = {
     countCart(state){
@@ -10,11 +9,20 @@ const getters = {
     // 計算購買件數
     countProductsNum(state) {
         let productsNum = 0;
-        state.carts.forEach(function(item) {
-            productsNum += item.quantity;
-        })
+        state.carts.forEach(item => productsNum += item.quantity);
         return productsNum
-        // return state.productsNum;
+    },
+    // 計算總額
+    countTotalPrice(state) {
+        let total = 0;
+        state.carts.forEach(item => total += item.quantity * item.price);
+        console.log('total', typeof (total));
+        return total
+    },
+    // 計算支付金額
+    countTotalPayment(state, getters) { // state不可以省略
+        let shippingFee = 100;
+        return getters.countTotalPrice + shippingFee;
     }
 }
 const mutations = {

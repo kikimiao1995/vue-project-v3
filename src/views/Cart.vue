@@ -62,10 +62,10 @@
                                 </tbody>
                             </table>
                             <div class="text-end pe-2">
-                                <p>小計：NT$2000</p>
+                                <p>小計：NT${{ countTotalPrice }}</p>
                                 <p>運費：NT$100</p>
                                 <hr>
-                                <p class="fw-bold">合計：NT$2100</p>
+                                <p class="fw-bold">合計：NT${{ countTotalPayment }}</p>
                             </div>
                             <div class="btn-full">前往結帳</div>
                         </div>
@@ -95,7 +95,7 @@ export default {
             carts: (state) => state.cart.carts,
             products: (state) => state.products.products,
         }),
-        ...mapGetters('cart',['countProductsNum',]),
+        ...mapGetters('cart',['countProductsNum','countTotalPrice','countTotalPayment']),
     },
     methods: {
         deleteProductFromCart(item) {
@@ -145,6 +145,9 @@ export default {
     text-align: center;
     cursor: pointer;
     padding: 10px 0px;
+    &:hover{
+        background: lighten(#2c3e50,10%);
+    }
 }
 
 

@@ -18,7 +18,7 @@
                     <p> {{productInfo.description}}</p>
                     <hr>
                     <div class="product-price py-2">
-                        <span>NT${{productInfo.price}}</span>
+                        <span class="fs-3 ps-2">NT${{productInfo.price}}</span>
                     </div>
                     <div class="text-end">
                         <button class="cartbtn" type="button" @click="addProductsToCart(productInfo)">

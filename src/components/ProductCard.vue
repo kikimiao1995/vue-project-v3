@@ -8,8 +8,8 @@
             <div class="card-body text-start d-flex flex-column justify-content-center align-items-center">
                 <h5 class="card-title">{{ productInfo.name}}</h5>
                 <div class="price-box d-flex justify-content-center align-items-center">
-                    <div><del>${{ productInfo.price }} NTD</del></div>
-                    <div class="price fs-5 ms-3 text-red fw-bold">$9999 NTD</div>
+                    <!-- <div><del>${{ productInfo.price }} NTD</del></div> -->
+                    <div class="price fs-5 ms-3 text-red fw-bold">${{ productInfo.price }} NTD</div>
                 </div>
             </div>
             <div class="card-bottom d-flex justify-content-center align-items-center justify-content-around mt-2">
@@ -91,8 +91,8 @@ $list-group-bg: yellow;
         position: absolute;
         bottom: 0;
         width: 100%;
-        height: 20%;
-        background: lighten($primary-color,30%);
+        height: 21%;
+        background: lighten($primary-color,40%);
         color: #fff;
         font-size: 11px;
         letter-spacing: 2px;
@@ -102,13 +102,12 @@ $list-group-bg: yellow;
 
 .card-bottom {
     border-top: 1px solid lighten(grey,35%);
-    padding: 9px 0px;
+    padding: 12px 0;
     a {
         display: block;
         text-decoration: none;
         color:#2c3e50;
         font-size: 13px;
-        
     }
 }
 
