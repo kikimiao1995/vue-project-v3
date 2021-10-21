@@ -120,6 +120,9 @@ export default {
     text-align: center;
     border: 1px solid #2c3e50;
     cursor: pointer;
+    &:focus{
+        background: lighten(#DAC9A6,20%);;
+    }
 }
 .deleteItem{
     color:#2c3e50;

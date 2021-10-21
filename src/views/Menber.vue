@@ -1,12 +1,12 @@
 <template>
-    <div></div>
-    
+    <sign-up />
 </template>
 <script>
-
+import SignUp from '@/components/SignUp.vue'
 export default {
     name: "Menber",
     components: {
+        SignUp
     },
 }
 </script>
