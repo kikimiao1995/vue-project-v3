@@ -11,15 +11,15 @@
         <router-link to="/products">
             <div class="nav-title fw-bold">Category</div>
             <div class="nav-subtitle">商品分類</div>
-        </router-link> |
-        <router-link to="/class">
+        </router-link> 
+        <!-- <router-link to="/class">
             <div class="nav-title fw-bold">Class</div>
             <div class="nav-subtitle">課程</div>
         </router-link> |
         <router-link to="/contact">
             <div class="nav-title fw-bold">Contact</div>
             <div class="nav-subtitle">聯絡</div>
-        </router-link>
+        </router-link> -->
     </div>
     <router-view/>
 </template>
