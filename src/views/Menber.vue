@@ -1,13 +1,12 @@
 <template>
-    <div>menber</div>
-    <!-- <SwiperText /> -->
+    <div></div>
+    
 </template>
 <script>
-// import SwiperText from '@/components/swiper/SwiperText.vue'
+
 export default {
     name: "Menber",
     components: {
-        // SwiperText
     },
 }
 </script>
