@@ -15,7 +15,7 @@
             <div class="container">
                 <div class="row justify-content-lg-center">
                     <div class="col-12 col-lg-7 mb-5 mb-lg-0">
-                        <div class="text-end">* 購物車 (total件) *</div>
+                        <div class="text-end">* 購物車 ({{ countProductsNum }}件) *</div>
                         <div class="cartList border bg-white">
                             <div class="cartTitle">
                                 <div class="row mx-0 border-bottom align-items-center">
@@ -26,7 +26,7 @@
                                 </div>
                             </div>
                             <div class="cartItem"
-                                v-for="item in carts"
+                                v-for="(item, index) in carts"
                                 :key="item.id">
                                 <div class="row my-4 align-items-center">
                                     <div class="col-5 col-md-5 col-lg-6 d-flex align-items-center justify-content-center">
@@ -42,7 +42,7 @@
                                     </div>
                                     <div class="col-2">${{ item.price }}</div>
                                     <div class="col-2 col-md-2">
-                                        <span class="deleteItem" @click="deleteProductFromCart(item)">x</span>
+                                        <span class="deleteItem" @click="deleteProductFromCart(index)">x</span>
                                     </div>
                                 </div>
                             </div>
@@ -57,7 +57,7 @@
                                         :key="item.id">
                                         <td >{{ item.name }}</td>
                                         <td>{{ item.quantity }}</td>
-                                        <td class="text-right">NT${{ item.price }}</td>
+                                        <td class="text-right">NT${{ item.price*item.quantity }}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -78,7 +78,7 @@
 <script>
 import ShoppingFlow from '@/components/ShoppingFlow.vue'
 import BtnSwipeRight from '@/components/BtnSwipeRight.vue'
-import { mapState } from 'vuex'
+import { mapState, mapGetters } from 'vuex'
 export default {
     name:"Cart",
     components: {
@@ -95,6 +95,7 @@ export default {
             carts: (state) => state.cart.carts,
             products: (state) => state.products.products,
         }),
+        ...mapGetters('cart',['countProductsNum',]),
     },
     methods: {
         deleteProductFromCart(item) {

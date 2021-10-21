@@ -1,18 +1,21 @@
 const state = {
     //  add {ProductId, ProductQuantity} to cartProducts 紀錄加入購物車的商品
     carts: [],
-    productsNum:0,
+    // productsNum:0,
 }
 const getters = {
-    // 計算在購物車中的商品種數
-    countproductsNum(state) {
-        state.productsNum = 0;
+    countCart(state){
+        return state.carts.length
+    },
+    // 計算購買件數
+    countProductsNum(state) {
+        let productsNum = 0;
         state.carts.forEach(function(item) {
-            state.productsNum += item.quantity;
+            productsNum += item.quantity;
         })
+        return productsNum
         // return state.productsNum;
     }
-    // 計算總購買鍵數
 }
 const mutations = {
     PushProductsToCart(state, product) {
@@ -23,7 +26,8 @@ const mutations = {
     },
     deleteProductFromCart(state, index) {
         state.carts.splice(index,1); 
-    }
+    },
+
 }
 const actions = {
     // 按下“加入購物車”btn後，會進行的邏輯判斷
@@ -38,8 +42,7 @@ const actions = {
             // 這裡要寫出disable的style 讓商品分的的button沒有作用，整個card黑色的
         }
     },
-    deleteProductFromCart(context, product) {
-        let index = context.state.carts.findIndex(cart => cart === product.id);
+    deleteProductFromCart(context, index) {
         context.commit('deleteProductFromCart', index);
     },
 }
