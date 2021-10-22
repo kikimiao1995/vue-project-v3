@@ -40,7 +40,7 @@
                                     <div class="col-3 col-md-2">
                                         <input v-model="item.quantity" type="number" min="1" class="number-input">
                                     </div>
-                                    <div class="col-2">${{ item.price }}</div>
+                                    <div class="col-2">${{ item.price*item.quantity }}</div>
                                     <div class="col-2 col-md-2">
                                         <span class="deleteItem" @click="deleteProductFromCart(index)">x</span>
                                     </div>
