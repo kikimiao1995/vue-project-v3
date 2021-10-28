@@ -3,7 +3,7 @@
         <div class="container-fluid">
             <ul class="contactLogo list-unstyled">
                 <li><a href="mailto:kikimiao1995@gmail.com"><i class="bi bi-envelope-fill"></i></a></li>
-                <li><a href="https://github.com/kikmiao1995"><i class="bi bi-github"></i></a></li>
+                <li><a href="https://github.com/kikmiao1995/vue-project-v3"><i class="bi bi-github"></i></a></li>
                 <li><a href="tel:+886-975126187"><i class="bi bi-telephone-fill"></i></a></li>
             </ul>
             <p>©Copright 2021-Aug kikimiao1995</p>
